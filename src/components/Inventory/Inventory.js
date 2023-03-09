@@ -9,6 +9,7 @@ const Inventory = () => {
     const [smShowthree, setSmShowthree] = useState(false);
     return (
         <>
+        <h1 variant='danger' className='text-center mt-5'>Complete Your Payment Using One of this Method</h1>
       <div className='button'>
         <Button variant='success' onClick={() => setSmShow(true)} className="me-2">
           <img className='me-2' src='https://play-lh.googleusercontent.com/1CRcUfmtwvWxT2g-xJF8s9_btha42TLi6Lo-qVkVomXBb_citzakZX9BbeY51iholWs' />

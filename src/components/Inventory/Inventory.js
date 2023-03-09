@@ -10,16 +10,16 @@ const Inventory = () => {
     return (
         <>
       <div className='button'>
-        <Button bg-secondary onClick={() => setSmShow(true)} className="me-2">
-          <img src='https://play-lh.googleusercontent.com/1CRcUfmtwvWxT2g-xJF8s9_btha42TLi6Lo-qVkVomXBb_citzakZX9BbeY51iholWs' />
+        <Button variant='success' onClick={() => setSmShow(true)} className="me-2">
+          <img className='me-2' src='https://play-lh.googleusercontent.com/1CRcUfmtwvWxT2g-xJF8s9_btha42TLi6Lo-qVkVomXBb_citzakZX9BbeY51iholWs' />
           B-Kash Payment
         </Button>
-        <Button onClick={() => setSmShowtwo(true)} className="me-2">
-          <img src='https://play-lh.googleusercontent.com/Iks014Ul-atatMhWs8rLbtG7cIZLPfpeMDdkLtmq5o7D5_MlFNu5mmIqRHAY45aOhapp' />
+        <Button variant='info' onClick={() => setSmShowtwo(true)} className="me-2">
+          <img className='me-2' src='https://play-lh.googleusercontent.com/Iks014Ul-atatMhWs8rLbtG7cIZLPfpeMDdkLtmq5o7D5_MlFNu5mmIqRHAY45aOhapp' />
           Nagad Payment
         </Button>
         <Button onClick={() => setSmShowthree(true)} className="me-2">
-          <img src='https://thumbs.dreamstime.com/b/money-cash-logo-vector-green-91037524.jpg' />
+          <img className='me-2' src='https://thumbs.dreamstime.com/b/money-cash-logo-vector-green-91037524.jpg' />
           Cash on delivery
         </Button>
       </div>

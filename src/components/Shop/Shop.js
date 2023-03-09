@@ -5,6 +5,7 @@ import { addToDb, getStoredCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
+import Carousel from 'react-bootstrap/Carousel';
 
 const Shop = () => {
     const [products, setProducts] = useProducts();
@@ -41,24 +42,71 @@ const Shop = () => {
         setCart(newCart);
         addToDb(selectedProduct.id);
     }
+        const [index, setIndex] = useState(0);
+
+        const handleSelect = (selectedIndex, e) => {
+          setIndex(selectedIndex);
+        };
 
     return (
-        <div className='shop-container'>
-            <div className="products-container">
-                {
-                    products.map(product=><Product 
-                        key={product.id}
-                        product={product}
-                        handleAddToCart={handleAddToCart}
-                        ></Product>)
-                }
-            </div>
-            <div className="cart-container">
-                <Cart cart={cart}>
-                    <Link to="/orders">
-                        <button>Review Order </button>
-                    </Link>
-                </Cart>
+        <div >
+            <Carousel className='banner-image' activeIndex={index} onSelect={handleSelect}>
+                <Carousel.Item>
+                    <img
+                    className="d-block w-100 h-50"
+                    src="https://img.freepik.com/free-vector/healthcare-medical-blue-background-banner_1017-20041.jpg"
+                    alt="First slide"
+                    />
+                    <Carousel.Caption>
+                    <h3>First slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                    className="d-block w-100 h-50"
+                    src="https://bbdu.ac.in/wp-content/uploads/2020/06/pharmacy-post-banner-background.jpg"
+                    alt="Second slide"
+                    />
+
+                    <Carousel.Caption>
+                    <h3>Second slide label</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                    className="d-block w-100 h-50"
+                    src="https://i.pngimg.me/thumb/f/720/d6823d25d10544778240.jpg"
+                    alt="Third slide"
+                    />
+
+                    <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    </p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+    </Carousel>
+            
+            <div className='shop-container'>
+                <div className="products-container">
+                    {
+                        products.map(product=><Product 
+                            key={product.id}
+                            product={product}
+                            handleAddToCart={handleAddToCart}
+                            ></Product>)
+                    }
+                </div>
+                <div className="cart-container">
+                    <Cart cart={cart}>
+                        <Link to="/orders">
+                            <button>Review Order </button>
+                        </Link>
+                    </Cart>
+                </div>
             </div>
         </div>
     );

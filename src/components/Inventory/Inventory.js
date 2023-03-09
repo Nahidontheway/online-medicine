@@ -9,16 +9,21 @@ const Inventory = () => {
     const [smShowthree, setSmShowthree] = useState(false);
     return (
         <>
-      <Button onClick={() => setSmShow(true)} className="m-5">
-        B-Kash Payment
-      </Button>
-      <Button onClick={() => setSmShowtwo(true)} className="m-5">
-        Nagad Payment
-      </Button>
-      <Button onClick={() => setSmShowthree(true)} className="m-5">
-        Cash on delivery
-      </Button>
-      <Modal className="modal mx-5"
+      <div className='button'>
+        <Button bg-secondary onClick={() => setSmShow(true)} className="me-2">
+          <img src='https://play-lh.googleusercontent.com/1CRcUfmtwvWxT2g-xJF8s9_btha42TLi6Lo-qVkVomXBb_citzakZX9BbeY51iholWs' />
+          B-Kash Payment
+        </Button>
+        <Button onClick={() => setSmShowtwo(true)} className="me-2">
+          <img src='https://play-lh.googleusercontent.com/Iks014Ul-atatMhWs8rLbtG7cIZLPfpeMDdkLtmq5o7D5_MlFNu5mmIqRHAY45aOhapp' />
+          Nagad Payment
+        </Button>
+        <Button onClick={() => setSmShowthree(true)} className="me-2">
+          <img src='https://thumbs.dreamstime.com/b/money-cash-logo-vector-green-91037524.jpg' />
+          Cash on delivery
+        </Button>
+      </div>
+      <Modal className="modal"
         size="sm"
         show={smShow}
         onHide={() => setSmShow(false)}
@@ -41,7 +46,7 @@ const Inventory = () => {
         </Modal.Body>
       </Modal>
 
-      <Modal className="modal mx-5"
+      <Modal className="modal"
         size="sm"
         show={smShowtwo}
         onHide={() => setSmShowtwo(false)}
@@ -64,7 +69,7 @@ const Inventory = () => {
         </Modal.Body>
       </Modal>
 
-      <Modal className="modal mx-5"
+      <Modal className="modal"
         size="sm"
         show={smShowthree}
         onHide={() => setSmShowthree(false)}

@@ -7,7 +7,7 @@ const Header = () => {
     const {user, logOut}= useContext(AuthContext);
     return (
         <nav className='header'>
-            <h2>Medicine Shop</h2>
+            <h2><i className="me-1 fa-solid fa-house-chimney-medical"></i>Medicine Shop</h2>
             <div>
                 <Link to="/shop">Shop</Link>
                 <Link to="/orders">Orders</Link>
